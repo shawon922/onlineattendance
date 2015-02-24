@@ -1,0 +1,31 @@
+/*Common CSS*/
+
+.full {
+    width: 100%;
+    font-family: sans-serif, serif;
+}
+
+.container {
+    
+}
+
+.jumbotron {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+/*Style for Admin Panel starts here*/
+
+/*index page*/
+.greeting {
+    text-align: center;
+}
+
+
+/*manageteacher page*/
+table tr th {
+    text-align: center;
+}
+
+/*Style for Admin Panel ends here*/
+
