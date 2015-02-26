@@ -4,7 +4,7 @@
     include 'includes/header.php';
  ?>
     <div class="row greeting">
-        <h2 class="h2">Manage Course</h2>
+        <h2 class="h2">Admin Panel</h2>
     </div>
 
 <?php 
@@ -13,18 +13,22 @@
 ?>
 
     <div class="col-md-9">
-            <h4 class="h4 right"><a href="addcourse.php">Add New Course</a> | <a href="offeredcourse.php">Offered Course</a></h4>
+            <h4 class="h4 right"><a href="addcourse.php">Offer New Course</a>
             <table class="table">
                 <tr>
-                    <th colspan="4" style="text-align: center;">All Courses Table</th>
+                    <th colspan="6" style="text-align: center;">Offered Courses Table</th>
                 </tr>
                 <tr>
                     <th>Course Code</th>
                     <th>Course Name</th>
-                    <th>Credit</th>
+                    <th>Semester Name</th>
+                    <th>Year</th>
+                    <th>Teacher Name</th>
                     <th></th>
                 </tr>
                 <tr>
+                    <td></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>

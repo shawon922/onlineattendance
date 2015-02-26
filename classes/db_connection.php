@@ -3,7 +3,7 @@
     $host      = 'localhost';
     $user      = 'root';
     $pass      = '';
-    $dbname    = 'technician24services';
+    $dbname    = 'onlineattendance';
     
     
  

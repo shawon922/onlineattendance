@@ -14,6 +14,13 @@
     padding-right: 0px !important;
 }
 
+/*Sidebar*/
+.sidebar-left {
+    /*background-color: #d6d6d6;*/
+}
+
+
+
 /*Style for Admin Panel starts here*/
 
 /*index page*/
@@ -28,4 +35,14 @@ table tr th {
 }
 
 /*Style for Admin Panel ends here*/
+
+
+/*Style for Teacher Panel starts here*/
+
+
+
+
+/*Style for Admin Panel ends here*/
+
+
 

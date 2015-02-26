@@ -4,7 +4,7 @@
     include 'includes/header.php';
  ?>
     <div class="row greeting">
-        <h2 class="h2">Admin Panel</h2>
+        <h2 class="h2">Manage Teacher</h2>
     </div>
 
 <?php 
@@ -14,23 +14,23 @@
 
         <div class="col-md-9">
             <h4 class="h4"><a href="addteacher.php">Add Teacher</a></h4>
-            <table class="table">
+            <table class="table table-bordered">
                 <tr>
                     <th colspan="4">Teachers Table</th>
                 </tr>
                 <tr>
+                    <th>Teacher Id</th>
                     <th>Teacher Name</th>
                     <th>Email</th>
                     <th></th>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td style="text-align: right;">
-                        <a href="editteacher.php?t_id=">Edit</a> | 
-                        <a href="deleteteacher.php?t_id=">Delete</a>
-                    </td>
-                </tr>
+                
+                
+                <?php 
+                    getTeacher();
+                ?>
+                
+                
             </table>
         </div>
 

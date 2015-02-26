@@ -4,7 +4,7 @@
     include 'includes/header.php';
  ?>
     <div class="row greeting">
-        <h2 class="h2">Admin Panel</h2>
+        <h2 class="h2">Manage Attendance</h2>
     </div>
 
 <?php 
@@ -25,15 +25,21 @@
             </form>
             <table class="table">
                 <tr>
-                    <th colspan="2" style="text-align: center;">Attendance of Semester_Name - year</th>
+                    <th colspan="3" style="text-align: center;">Attendance of Semester_Name - year</th>
                 </tr>
                 <tr>
                     <th>Course Name</th>
-                    <th>Teacher Name</th>
+                    <th>Course Co-ordinator</th>
+                    <th></th>
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>                   
+                    <td></td>
+                    <td style="text-align: right;">
+                        <a href="viewattendance.php?t_id=">View</a> | 
+                        <a href="downloadattendance.php?t_id=">Download</a> | 
+                        <a href="printattendance.php?t_id=">Print</a>
+                    </td>                 
                 </tr>
             </table>
         </div>
