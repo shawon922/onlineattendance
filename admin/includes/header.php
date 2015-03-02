@@ -1,3 +1,28 @@
+<?php 
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    
+    if(!isset($_SESSION['admin']) && !isset($_SESSION['role_admin'])) {
+        header("Location: ../login.php");
+    }
+    
+    $loginname = $_SESSION['admin'];
+    
+    $getadmin = "select issuperadmin from admin where admin_name = '$loginname'";
+        
+    $query = $con->query($getadmin);
+    
+    $query->setFetchMode(PDO::FETCH_ASSOC); 
+    
+    $row = $query->fetch();
+                
+    $issuperadmin = $row['issuperadmin'];
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -56,8 +81,13 @@
                                     </ul>
                                     <ul class="nav navbar-nav navbar-right">
                                         <li><a href="addadmin.php">New Admin</a></li>
+                                        <?php if($issuperadmin) { ?>
+                                        <li><a href="manageadmins.php">View Admin</a></li>
+                                        <?php } ?>
+                                        
+                                        
                                         <li><a href="editprofile.php">Edit Profile</a></li>
-                                        <li><a href="logout.php">Log Out</a></li>
+                                        <li><a href="../logout.php">Log Out</a></li>
                                     </ul> 
                                                         
                                 </div><!-- /.navbar-collapse -->

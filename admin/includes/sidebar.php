@@ -1,3 +1,13 @@
+    <?php 
+
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+        
+        if(!isset($_SESSION['admin']) && !isset($_SESSION['role_admin'])) {
+            header("Location: ../login.php");
+        }
+    ?>
     <div class="row">
         <div class="col-md-3">
             <div class=" sidebar-left">

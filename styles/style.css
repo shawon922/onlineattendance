@@ -26,6 +26,8 @@
 /*index page*/
 .greeting {
     text-align: center;
+    background-color: #999;
+    border-radius: 5px;
 }
 
 

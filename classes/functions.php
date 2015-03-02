@@ -31,4 +31,30 @@
     }
     
     
+    function getAdmin()
+    {
+        global $con;
+        
+        $getadmin = "select * from admin";
+        
+        $query = $con->query($getadmin);
+        
+        $query->setFetchMode(PDO::FETCH_ASSOC);
+        
+        while($row = $query->fetch()) {
+            $adminid = $row['admin_id'];
+            $loginname = $row['admin_name'];
+            $adminemail = $row['admin_email'];
+            
+            echo "<tr>
+                    <td>$loginname</td>
+                    <td>$adminemail</td>
+                    <td style='text-align: right;'>
+                        <a href='editadmin.php?value=$adminid'>Edit</a> | 
+                        <a href='deleteadmin.php?value=$adminid'>Delete</a>
+                    </td>
+                </tr>";
+        }
+    }
+    
     

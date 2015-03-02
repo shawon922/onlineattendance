@@ -1,4 +1,15 @@
+
+
 <?php 
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    
+    if(!isset($_SESSION['admin']) && !isset($_SESSION['role_admin'])) {
+        header("Location: ../login.php");
+    }
+
+
 
     require '../classes/functions.php';
     include 'includes/header.php';

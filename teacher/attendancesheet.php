@@ -1,6 +1,15 @@
 
     <?php 
     
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    
+    if(!isset($_SESSION['teacher']) && !isset($_SESSION['role_teacher'])) {
+        header("Location: ../login.php");
+    }
+
+    
         require '../classes/functions.php';
         include 'includes/header.php';            
      ?>
@@ -15,14 +24,14 @@
         
         <div class="col-md-4">
             <form class="form-horizontal" role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                <div class="form-group">
-                    <!--<label class="col-sm-4 control-label">Select Semester</label>-->
+                <!--<div class="form-group">
+                    <label class="col-sm-4 control-label">Select Semester</label>
                     <div class="col-sm-6">
                         <select class="form-control" name="" onchange="getCity('classes/findcity.php?division_id='+this.value)">
                             <option value="" selected="selected">Select Semester</option> 
                         </select>
                     </div>
-                </div>
+                </div>-->
             </form>
             <table class="table">
                 <tr>
