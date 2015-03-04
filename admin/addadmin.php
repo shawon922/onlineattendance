@@ -74,7 +74,7 @@
     
     
     <?php
-    
+    $salt = 'abcde';
     if(isset($_POST['add'])){
 
     function test_input($data) {
@@ -89,7 +89,7 @@
         $loginname = test_input($_POST["loginname"]);
         
         
-        $password = md5($_POST["password"]);
+        $password = md5($_POST["password"]).$salt;
            
         
         $email = test_input($_POST["email"]);
@@ -117,10 +117,9 @@
             exit(1);
         }
         
-        $insert = "insert into admin values ('', '$loginname', '$password', '$email')";
+        $insert = "insert into admin (admin_id, admin_name, admin_password, admin_email) values ('', '$loginname', '$password', '$email')";
 
-        //$insert = "insert into customers (user_name, user_pass, user_email) values ('$name','$pass','$email')";
-
+        
         $q = $con->query($insert);
 
         echo "<script>alert('A New Admin Successfully Added!!');</script>";

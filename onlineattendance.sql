@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2015 at 09:48 PM
+-- Generation Time: Mar 04, 2015 at 04:16 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -32,15 +32,16 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `admin_password` varchar(128) NOT NULL,
   `admin_email` varchar(60) NOT NULL,
   `issuperadmin` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_password`, `admin_email`, `issuperadmin`) VALUES
-(1, 'admin', 'admin', 'admin@admin.com', 1),
-(2, 'admin1', 'e00cf25ad42683b3df678c61f42c6bda', 'admin1@admin1.com', 0);
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3abcde', 'admin@admin.com', 1),
+(2, 'admin1', 'e00cf25ad42683b3df678c61f42c6bdaabcde', 'admin1@admin1.com', 0),
+(3, 'abc', '827ccb0eea8a706c4c34a16891f84e7babcde', 'admin12@admin1.com', 0);
 
 -- --------------------------------------------------------
 
@@ -51,8 +52,17 @@ INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_password`, `admin_email`, 
 CREATE TABLE IF NOT EXISTS `course` (
   `course_code` varchar(10) NOT NULL,
   `course_name` varchar(40) NOT NULL,
-  `course_credit` decimal(1,1) NOT NULL
+  `course_credit` decimal(2,1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `course`
+--
+
+INSERT INTO `course` (`course_code`, `course_name`, `course_credit`) VALUES
+('101', 'Bangla', '3.0'),
+('102', 'English', '3.0'),
+('CSE 1102', 'Programming Language and Application-I ', '3.0');
 
 -- --------------------------------------------------------
 
@@ -79,7 +89,16 @@ CREATE TABLE IF NOT EXISTS `offeredcourse` (
   `semester_id` int(2) NOT NULL,
   `semester_year` year(4) NOT NULL,
   `teacher_id` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `offeredcourse`
+--
+
+INSERT INTO `offeredcourse` (`offer_id`, `course_code`, `semester_id`, `semester_year`, `teacher_id`) VALUES
+(5, '101', 1, 2015, '10001'),
+(6, '102', 1, 2015, '10001'),
+(7, 'CSE 1102', 1, 2015, '10001');
 
 -- --------------------------------------------------------
 
@@ -132,7 +151,8 @@ CREATE TABLE IF NOT EXISTS `teacher` (
 --
 
 INSERT INTO `teacher` (`teacher_id`, `teacher_name`, `teacher_password`, `teacher_email`) VALUES
-('10001', 'Mr. Localhost', '12345', 'localhost@localhost.com');
+('10001', 'Mr. Localhost1', '827ccb0eea8a706c4c34a16891f84e7b', 'localhost@localhost1.com'),
+('1002', 'Mr. Internet', '827ccb0eea8a706c4c34a16891f84e7b', 'internet@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -188,7 +208,7 @@ ALTER TABLE `teacher`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-MODIFY `admin_id` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `admin_id` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `enrollment`
 --
@@ -198,7 +218,7 @@ MODIFY `enrollment_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `offeredcourse`
 --
 ALTER TABLE `offeredcourse`
-MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `semester`
 --

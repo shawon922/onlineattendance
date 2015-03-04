@@ -104,7 +104,7 @@ if(isset($_GET['value'])) {
             
             $teacher_name = test_input($_POST["teachername"]);
             
-            $password = md5(trim($_POST["password"]));
+            $password = test_input($_POST["password"]);
             
             
             $email = test_input($_POST["email"]);
@@ -138,27 +138,24 @@ if(isset($_GET['value'])) {
             }
             
             
-            if($password !==null) {
+            if(!empty($password)) {
+                $password = md5($password);
                 
                 $update = "update teacher set teacher_id='$teacher_id', teacher_name = '$teacher_name', teacher_password = '$password', teacher_email = '$email' where teacher_id = '$value'";
                 
                 $q = $con->query($update);    
                 echo "<script>alert('Successfully updated!!');</script>";
-                
+                echo "<script>window.open('manageteachers.php', '_self');</script>";
             } else {
                 
                 $update = "update teacher set teacher_id='$teacher_id', teacher_name = '$teacher_name', teacher_email = '$email' where teacher_id = '$value'";
                 $q = $con->query($update);
     
                 echo "<script>alert('Successfully updated!!');</script>";
+                echo "<script>window.open('manageteachers.php', '_self');</script>";
                 
             }
             
-    
-            //$insert = "insert into customers (user_name, user_pass, user_email) values ('$name','$pass','$email')";
-    
-            
-            //header('Location: welcome.php');
     
         }
     }

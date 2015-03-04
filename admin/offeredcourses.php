@@ -19,10 +19,11 @@
 ?>
 
     <div class="col-md-9">
-            <h4 class="h4 right"><a href="addcourse.php">Offer New Course</a>
+            <h4 class="h4 right"><a href="offernewcourse.php">Offer New Course</a></h4>
+            
             <table class="table">
                 <tr>
-                    <th colspan="6" style="text-align: center;">Offered Courses Table</th>
+                    <th colspan="6" style="text-align: center;">Offered Courses</th>
                 </tr>
                 <tr>
                     <th>Course Code</th>

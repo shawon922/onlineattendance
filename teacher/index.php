@@ -1,7 +1,7 @@
 
     <?php 
     
-        require '../classes/functions.php';
+        require_once '../classes/functions.php';
         include 'includes/header.php';            
      ?>
     <div class="row greeting">

@@ -41,7 +41,11 @@ table tr th {
 
 /*Style for Teacher Panel starts here*/
 
-
+.status-checkbox input[type="checkbox"] {
+    float: left;
+    margin: 0 auto;
+    width: 100%;
+}
 
 
 /*Style for Admin Panel ends here*/

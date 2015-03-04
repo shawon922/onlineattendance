@@ -74,13 +74,14 @@
     
         if(isset($_POST['submit'])) {
             
+            $salt = 'abcde';
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
             
             $role = $_POST['role'];
             
             $name_id = $_POST['loginfo'];
     
-            $password = md5($_POST['password']);
+            $password = md5($_POST['password']).$salt;
             
             if($role === 'admin') {
                 $log_sql = "select * from admin where admin_name = '$name_id' and admin_password='$password'";
